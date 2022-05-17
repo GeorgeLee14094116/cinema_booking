@@ -29,7 +29,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="assignment3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3e-g9-TPV">
@@ -53,6 +53,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="cancelButtonAction:" destination="JAj-sh-Iml" eventType="touchUpInside" id="I9d-2I-EEk"/>
                                     <segue destination="XkD-4c-rcA" kind="show" id="E9h-w3-a5B"/>
                                 </connections>
                             </button>
@@ -80,25 +81,21 @@
                     <navigationItem key="navigationItem" id="SNH-vp-OGT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="JAj-sh-Iml" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="18.46153846153846" y="67.535545023696685"/>
         </scene>
-        <!--View Controller-->
+        <!--Booking Cancel View Controller-->
         <scene sceneID="sLz-Ua-udz">
             <objects>
-                <viewController id="XkD-4c-rcA" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BookingCancelViewController" id="XkD-4c-rcA" customClass="BookingCancelViewController" customModule="assignment3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KS4-iT-eW4">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="sYt-zs-oNw">
                                 <rect key="frame" x="75" y="44" width="240" height="273"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Booking Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZ3-4s-bjp">
-                                <rect key="frame" x="20" y="350" width="350" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbZ-YW-VWT">
                                 <rect key="frame" x="10" y="461" width="370" height="36"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
@@ -107,9 +104,15 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="cancelAction:" destination="XkD-4c-rcA" eventType="touchUpInside" id="Qh7-UI-n2L"/>
                                     <segue destination="rFQ-el-5Yx" kind="show" id="oSx-cK-di3"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Booking Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZ3-4s-bjp">
+                                <rect key="frame" x="136" y="350" width="118.33333333333331" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9er-Lm-TNK"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
@@ -117,15 +120,20 @@
                             <constraint firstItem="qbZ-YW-VWT" firstAttribute="leading" secondItem="9er-Lm-TNK" secondAttribute="leading" constant="10" id="6qx-4t-Rt4"/>
                             <constraint firstItem="WZ3-4s-bjp" firstAttribute="top" secondItem="sYt-zs-oNw" secondAttribute="bottom" constant="33" id="ANv-1W-7QM"/>
                             <constraint firstItem="qbZ-YW-VWT" firstAttribute="top" secondItem="WZ3-4s-bjp" secondAttribute="bottom" constant="90" id="EMg-Ms-wwh"/>
-                            <constraint firstItem="9er-Lm-TNK" firstAttribute="trailing" secondItem="WZ3-4s-bjp" secondAttribute="trailing" constant="20" id="GmJ-a9-cY3"/>
+                            <constraint firstItem="9er-Lm-TNK" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WZ3-4s-bjp" secondAttribute="trailing" id="GmJ-a9-cY3"/>
                             <constraint firstItem="sYt-zs-oNw" firstAttribute="leading" secondItem="9er-Lm-TNK" secondAttribute="leading" constant="75" id="Pne-WK-wIl"/>
-                            <constraint firstItem="WZ3-4s-bjp" firstAttribute="leading" secondItem="9er-Lm-TNK" secondAttribute="leading" constant="20" id="Ybf-4x-m99"/>
+                            <constraint firstItem="WZ3-4s-bjp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9er-Lm-TNK" secondAttribute="leading" id="Ybf-4x-m99"/>
                             <constraint firstItem="9er-Lm-TNK" firstAttribute="trailing" secondItem="qbZ-YW-VWT" secondAttribute="trailing" constant="10" id="h4B-Ob-Eua"/>
+                            <constraint firstItem="WZ3-4s-bjp" firstAttribute="centerX" secondItem="KS4-iT-eW4" secondAttribute="centerX" id="ltk-Md-mVz"/>
                             <constraint firstItem="sYt-zs-oNw" firstAttribute="top" secondItem="9er-Lm-TNK" secondAttribute="top" id="p0F-sP-CUW"/>
                             <constraint firstItem="9er-Lm-TNK" firstAttribute="trailing" secondItem="sYt-zs-oNw" secondAttribute="trailing" constant="75" id="tBU-9v-vCd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bZw-0o-A5I"/>
+                    <connections>
+                        <outlet property="bookingInfoLabel" destination="WZ3-4s-bjp" id="PKX-fn-AK7"/>
+                        <outlet property="cancelButton" destination="qbZ-YW-VWT" id="EL3-L5-Y2u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12C-Kk-on5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -136,7 +144,7 @@
             <objects>
                 <viewController id="rFQ-el-5Yx" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W12-9R-FgY">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSG-cr-FOH">
@@ -175,12 +183,12 @@
             </objects>
             <point key="canvasLocation" x="-1355.3846153846152" y="799.76303317535542"/>
         </scene>
-        <!--View Controller-->
+        <!--Booking Detail View Controller-->
         <scene sceneID="4zO-Gt-1qR">
             <objects>
-                <viewController id="2KC-9R-FbW" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BookingDetailViewController " id="2KC-9R-FbW" customClass="BookingDetailViewController" customModule="assignment3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zrh-NU-Ihv">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="gqQ-HB-A6d">
@@ -196,8 +204,8 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="EFg-hP-hcj"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="booking detail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoF-GO-Uns">
-                                <rect key="frame" x="141.33333333333334" y="332" width="107.33333333333334" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Booking Detail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoF-GO-Uns">
+                                <rect key="frame" x="140" y="332" width="110" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -218,6 +226,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JWo-rl-z7r"/>
+                    <connections>
+                        <outlet property="bookingDetailLabel" destination="JoF-GO-Uns" id="WD0-cd-KV3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="neZ-Lk-AOV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -228,23 +239,23 @@
             <objects>
                 <viewController storyboardIdentifier="BookingViewController" id="UnQ-wU-586" customClass="BookingViewController" customModule="assignment3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WdR-3z-nVM">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dr Strange" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFf-5O-5Ac">
-                                <rect key="frame" x="50" y="44" width="290" height="30"/>
+                                <rect key="frame" x="50" y="0.0" width="290" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fantasy themes and action violence" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLB-mx-714">
-                                <rect key="frame" x="102.66666666666667" y="82" width="244.66666666666663" height="18"/>
+                                <rect key="frame" x="102.66666666666667" y="38" width="244.66666666666663" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="XQY-lr-uU4">
-                                <rect key="frame" x="75" y="627" width="240" height="150"/>
+                                <rect key="frame" x="75" y="607" width="240" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="Z38-Sj-RwJ"/>
                                 </constraints>
@@ -284,7 +295,7 @@
                                 </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wI9-VB-BBY">
-                                <rect key="frame" x="99" y="509" width="192" height="74"/>
+                                <rect key="frame" x="99" y="489" width="192" height="74"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Make a booking">
@@ -335,7 +346,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xjw-uE-V53"/>
+        <segue reference="ojP-BE-JWz"/>
         <segue reference="EFg-hP-hcj"/>
     </inferredMetricsTieBreakers>
     <resources>
