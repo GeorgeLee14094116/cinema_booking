@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -224,10 +223,10 @@
             </objects>
             <point key="canvasLocation" x="532.30769230769226" y="833.17535545023691"/>
         </scene>
-        <!--View Controller-->
+        <!--Booking View Controller-->
         <scene sceneID="6Jc-sX-x4d">
             <objects>
-                <viewController id="UnQ-wU-586" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BookingViewController" id="UnQ-wU-586" customClass="BookingViewController" customModule="assignment3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WdR-3z-nVM">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -239,86 +238,96 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fantasy themes and action violence" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLB-mx-714">
-                                <rect key="frame" x="30" y="82" width="320" height="18"/>
+                                <rect key="frame" x="102.66666666666667" y="82" width="244.66666666666663" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="XQY-lr-uU4">
+                                <rect key="frame" x="75" y="627" width="240" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Z38-Sj-RwJ"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="61" translatesAutoresizingMaskIntoConstraints="NO" id="7kw-DX-b4k">
+                                <rect key="frame" x="20" y="384" width="343.66666666666669" height="38"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMp-Sc-ZId">
+                                        <rect key="frame" x="0.0" y="0.0" width="141.33333333333334" height="38"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="RoomA - $10">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="roomSelection:" destination="UnQ-wU-586" eventType="touchUpInside" id="Tgj-ms-hX0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qok-Xl-uao">
+                                        <rect key="frame" x="202.33333333333331" y="0.0" width="141.33333333333331" height="38"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="RoomB - $20">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="roomSelection:" destination="UnQ-wU-586" eventType="touchUpInside" id="Zlf-E5-Oxe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="2gb-AH-Vhx">
+                                <rect key="frame" x="65" y="168" width="320" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="xKb-mw-yM5"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="getDate:" destination="UnQ-wU-586" eventType="valueChanged" id="qP3-Fa-M7y"/>
+                                </connections>
+                            </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wI9-VB-BBY">
-                                <rect key="frame" x="98.333333333333329" y="277" width="193.33333333333337" height="44"/>
+                                <rect key="frame" x="99" y="509" width="192" height="74"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Make a booking">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="makeBooking:" destination="UnQ-wU-586" eventType="touchUpInside" id="s73-VR-QKY"/>
                                     <segue destination="2KC-9R-FbW" kind="show" id="xjw-uE-V53"/>
                                 </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="XQY-lr-uU4">
-                                <rect key="frame" x="75" y="331" width="240" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="Z38-Sj-RwJ"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZhG-hg-Y4J">
-                                <rect key="frame" x="75" y="121" width="240" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <menu key="menu" id="omm-Xk-0y9">
-                                    <children>
-                                        <command title="Item 1" id="rpR-Sl-JiQ"/>
-                                        <command title="Item 2" id="mdF-PM-l4j"/>
-                                    </children>
-                                </menu>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMp-Sc-ZId">
-                                <rect key="frame" x="48" y="208" width="110" height="50"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qok-Xl-uao">
-                                <rect key="frame" x="250" y="208" width="110" height="50"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
-                                </buttonConfiguration>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="a6t-i9-rtm"/>
                         <color key="backgroundColor" systemColor="systemGrayColor"/>
                         <constraints>
-                            <constraint firstItem="a6t-i9-rtm" firstAttribute="trailing" secondItem="oLB-mx-714" secondAttribute="trailing" constant="40" id="2md-Ln-yNk"/>
-                            <constraint firstItem="ZhG-hg-Y4J" firstAttribute="leading" secondItem="XQY-lr-uU4" secondAttribute="leading" id="34G-x8-X7X"/>
+                            <constraint firstItem="a6t-i9-rtm" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oLB-mx-714" secondAttribute="trailing" id="2md-Ln-yNk"/>
+                            <constraint firstItem="7kw-DX-b4k" firstAttribute="top" secondItem="WdR-3z-nVM" secondAttribute="top" constant="384" id="4Ud-mW-4iV"/>
                             <constraint firstItem="oLB-mx-714" firstAttribute="top" secondItem="DFf-5O-5Ac" secondAttribute="bottom" constant="8" symbolic="YES" id="4pD-SS-Ad5"/>
-                            <constraint firstItem="wI9-VB-BBY" firstAttribute="top" secondItem="tMp-Sc-ZId" secondAttribute="bottom" constant="19" id="84W-a2-TMv"/>
-                            <constraint firstItem="wI9-VB-BBY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="a6t-i9-rtm" secondAttribute="leading" id="A5M-kk-EKq"/>
-                            <constraint firstItem="Qok-Xl-uao" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tMp-Sc-ZId" secondAttribute="trailing" constant="8" symbolic="YES" id="B72-sI-prU"/>
-                            <constraint firstItem="oLB-mx-714" firstAttribute="leading" secondItem="a6t-i9-rtm" secondAttribute="leading" constant="30" id="CG0-km-caH"/>
+                            <constraint firstItem="oLB-mx-714" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="a6t-i9-rtm" secondAttribute="leading" id="CG0-km-caH"/>
                             <constraint firstItem="DFf-5O-5Ac" firstAttribute="centerX" secondItem="a6t-i9-rtm" secondAttribute="centerX" id="DHY-jb-n6U"/>
-                            <constraint firstItem="tMp-Sc-ZId" firstAttribute="top" secondItem="ZhG-hg-Y4J" secondAttribute="bottom" constant="45" id="Ely-kW-E6l"/>
-                            <constraint firstItem="ZhG-hg-Y4J" firstAttribute="trailing" secondItem="XQY-lr-uU4" secondAttribute="trailing" id="ISA-AQ-edW"/>
-                            <constraint firstItem="Qok-Xl-uao" firstAttribute="centerY" secondItem="tMp-Sc-ZId" secondAttribute="centerY" id="Itb-GH-HDf"/>
+                            <constraint firstItem="7kw-DX-b4k" firstAttribute="leading" secondItem="a6t-i9-rtm" secondAttribute="leading" constant="20" id="DZJ-Ef-Kab"/>
+                            <constraint firstItem="wI9-VB-BBY" firstAttribute="centerX" secondItem="XQY-lr-uU4" secondAttribute="centerX" id="Hgw-ju-ACz"/>
                             <constraint firstItem="DFf-5O-5Ac" firstAttribute="top" secondItem="a6t-i9-rtm" secondAttribute="top" id="Mc7-7K-sLx"/>
-                            <constraint firstItem="XQY-lr-uU4" firstAttribute="top" secondItem="wI9-VB-BBY" secondAttribute="bottom" constant="10" id="N5a-7o-2uO"/>
+                            <constraint firstItem="a6t-i9-rtm" firstAttribute="trailing" secondItem="2gb-AH-Vhx" secondAttribute="trailing" constant="5" id="Okx-DM-Dvx"/>
                             <constraint firstItem="DFf-5O-5Ac" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="a6t-i9-rtm" secondAttribute="leading" id="QxR-JS-Q70"/>
-                            <constraint firstItem="wI9-VB-BBY" firstAttribute="centerX" secondItem="a6t-i9-rtm" secondAttribute="centerX" id="RZD-Id-s0q"/>
-                            <constraint firstItem="ZhG-hg-Y4J" firstAttribute="top" secondItem="oLB-mx-714" secondAttribute="bottom" constant="21" id="ST6-8m-sHM"/>
-                            <constraint firstItem="tMp-Sc-ZId" firstAttribute="leading" secondItem="a6t-i9-rtm" secondAttribute="leading" constant="48" id="dRL-Xa-tew"/>
-                            <constraint firstItem="XQY-lr-uU4" firstAttribute="centerX" secondItem="wI9-VB-BBY" secondAttribute="centerX" id="h3r-p7-XFB"/>
-                            <constraint firstItem="a6t-i9-rtm" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wI9-VB-BBY" secondAttribute="trailing" id="khN-8g-BQm"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="XQY-lr-uU4" secondAttribute="bottom" constant="-16" id="S5e-ek-bD8"/>
+                            <constraint firstItem="XQY-lr-uU4" firstAttribute="top" secondItem="wI9-VB-BBY" secondAttribute="bottom" constant="44" id="VjG-sJ-eZa"/>
+                            <constraint firstItem="7kw-DX-b4k" firstAttribute="top" secondItem="2gb-AH-Vhx" secondAttribute="bottom" constant="54" id="c9d-Jp-XeK"/>
+                            <constraint firstItem="wI9-VB-BBY" firstAttribute="centerX" secondItem="DFf-5O-5Ac" secondAttribute="centerX" id="ds6-0b-cKQ"/>
+                            <constraint firstItem="wI9-VB-BBY" firstAttribute="leading" secondItem="a6t-i9-rtm" secondAttribute="leading" constant="99" id="jWe-ww-fF7"/>
                             <constraint firstItem="XQY-lr-uU4" firstAttribute="leading" secondItem="a6t-i9-rtm" secondAttribute="leading" constant="75" id="lTn-b5-kOQ"/>
                             <constraint firstItem="a6t-i9-rtm" firstAttribute="trailing" secondItem="DFf-5O-5Ac" secondAttribute="trailing" constant="50" id="m1N-ww-V69"/>
-                            <constraint firstItem="a6t-i9-rtm" firstAttribute="trailing" secondItem="Qok-Xl-uao" secondAttribute="trailing" constant="30" id="yZD-SV-vvD"/>
+                            <constraint firstItem="2gb-AH-Vhx" firstAttribute="centerX" secondItem="oLB-mx-714" secondAttribute="centerX" id="thH-zM-TOA"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="s1X-cK-39P"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="DatePicker" destination="2gb-AH-Vhx" id="kbg-ZO-7Ty"/>
+                        <outlet property="MovieTitleLabel" destination="DFf-5O-5Ac" id="Ih6-w6-Jk2"/>
+                        <outletCollection property="RoomButtons" destination="tMp-Sc-ZId" collectionClass="NSMutableArray" id="aNg-aR-9c6"/>
+                        <outletCollection property="RoomButtons" destination="Qok-Xl-uao" collectionClass="NSMutableArray" id="fqb-TR-7cN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OsZ-aP-KzE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
