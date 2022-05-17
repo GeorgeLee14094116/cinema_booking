@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		454F41A828332FD80075EF14 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454F41A728332FD80075EF14 /* BookingViewController.swift */; };
 		454F41AA28332FF20075EF14 /* EnumRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454F41A928332FF20075EF14 /* EnumRoom.swift */; };
+		7EEBB2A528339E290038416B /* BookingCancelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEBB2A428339E290038416B /* BookingCancelViewController.swift */; };
+		7EEBB2A728339E490038416B /* BookingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EEBB2A628339E490038416B /* BookingDetailViewController.swift */; };
 		D84F211E282C1763007B9C50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F211D282C1763007B9C50 /* AppDelegate.swift */; };
 		D84F2120282C1763007B9C50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F211F282C1763007B9C50 /* SceneDelegate.swift */; };
 		D84F2122282C1763007B9C50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F2121282C1763007B9C50 /* ViewController.swift */; };
@@ -20,6 +22,8 @@
 /* Begin PBXFileReference section */
 		454F41A728332FD80075EF14 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		454F41A928332FF20075EF14 /* EnumRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumRoom.swift; sourceTree = "<group>"; };
+		7EEBB2A428339E290038416B /* BookingCancelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingCancelViewController.swift; sourceTree = "<group>"; };
+		7EEBB2A628339E490038416B /* BookingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailViewController.swift; sourceTree = "<group>"; };
 		D84F211A282C1763007B9C50 /* assignment3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = assignment3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D84F211D282C1763007B9C50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D84F211F282C1763007B9C50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +50,8 @@
 			children = (
 				454F41A728332FD80075EF14 /* BookingViewController.swift */,
 				454F41A928332FF20075EF14 /* EnumRoom.swift */,
+				7EEBB2A428339E290038416B /* BookingCancelViewController.swift */,
+				7EEBB2A628339E490038416B /* BookingDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -156,7 +162,9 @@
 				D84F2122282C1763007B9C50 /* ViewController.swift in Sources */,
 				D84F211E282C1763007B9C50 /* AppDelegate.swift in Sources */,
 				454F41A828332FD80075EF14 /* BookingViewController.swift in Sources */,
+				7EEBB2A528339E290038416B /* BookingCancelViewController.swift in Sources */,
 				D84F2120282C1763007B9C50 /* SceneDelegate.swift in Sources */,
+				7EEBB2A728339E490038416B /* BookingDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
