@@ -76,10 +76,17 @@ class BookingViewController: UIViewController {
         let defaults = UserDefaults.standard
         
         if bookingInformation.count < 1 {
-        // appends information into the array
-            bookingInformation.append(BookingInformation(movieTitle: movieTitle, date: date, roomName: roomName.rawValue))
-            
-            defaults.set(try? PropertyListEncoder().encode(bookingInformation), forKey: KEY_BOOKING)
+            if date == nil {
+                let alertDate = UIAlertController(title: "Alert!", message: "Please select a date.", preferredStyle: UIAlertController.Style.alert)
+                alertDate.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alertDate, animated: true, completion: nil)
+            }
+            else {
+            // appends information into the array
+                bookingInformation.append(BookingInformation(movieTitle: movieTitle, date: date, roomName: roomName.rawValue))
+                
+                defaults.set(try? PropertyListEncoder().encode(bookingInformation), forKey: KEY_BOOKING)
+            }
         }
         else{
             // alerts when there is a booking
