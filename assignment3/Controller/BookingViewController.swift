@@ -21,6 +21,8 @@ class BookingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        bookingInformation = readBooking()
     }
 
     // function to get date
@@ -45,11 +47,25 @@ class BookingViewController: UIViewController {
     func getRoomType() -> RoomType {
         for (index, button) in RoomButtons.enumerated() {
             
-            if button.tintColor == UIColor.systemBlue { // checks if room button is blue
+            if button.tintColor == UIColor.gray { // checks if room button is blue
                 return RoomType.allCases[index]
             }
         }
         return .RoomA // sets roomA as a default
+    }
+    
+    // Function for reading booking info from user defaults
+    func readBooking() -> [BookingInformation] {
+        let defaults = UserDefaults.standard
+        if let savedArrayData = defaults.value(forKey: KEY_BOOKING) as? Data {
+            if let array = try? PropertyListDecoder().decode(Array<BookingInformation>.self, from: savedArrayData) {
+                return array
+            } else {
+                return []
+            }
+        } else {
+            return []
+        }
     }
     
     // function to make booking
@@ -59,10 +75,18 @@ class BookingViewController: UIViewController {
         
         let defaults = UserDefaults.standard
         
+        if bookingInformation.count < 1 {
         // appends information into the array
-        bookingInformation.append(BookingInformation(movieTitle: movieTitle, date: date, roomName: roomName.rawValue))
-        
-        defaults.set(try? PropertyListEncoder().encode(bookingInformation), forKey: KEY_BOOKING)
+            bookingInformation.append(BookingInformation(movieTitle: movieTitle, date: date, roomName: roomName.rawValue))
+            
+            defaults.set(try? PropertyListEncoder().encode(bookingInformation), forKey: KEY_BOOKING)
+        }
+        else{
+            // alerts when there is a booking
+            let alert = UIAlertController(title: "Alert!", message: "You already have a booking.", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
         
     }
 }
