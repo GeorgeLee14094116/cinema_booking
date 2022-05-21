@@ -14,10 +14,13 @@ class BookingDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         showBooking()
     }
         
+    @IBAction func goToHomePage(_ sender: UIButton) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
     // Function for showing booking detail to user
     func showBooking() {
         self.bookingInfo = readBooking()
@@ -33,10 +36,8 @@ class BookingDetailViewController: UIViewController {
                 }
             }
         }
-        
     }
     
-
     // Function for read booking info from user defaults
     func readBooking() -> [BookingInformation] {
         let defaults = UserDefaults.standard
@@ -50,7 +51,4 @@ class BookingDetailViewController: UIViewController {
             return []
         }
     }
-    
 }
-
-

@@ -15,10 +15,8 @@ class BookingCancelViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         showBooking()
     }
-    
     
     // Function for showing booking info to user
     func showBooking () {
@@ -36,7 +34,6 @@ class BookingCancelViewController: UIViewController {
             }
         }
     }
-    
     
     // Function for reading booking info from user defaults
     func readBooking() -> [BookingInformation] {
